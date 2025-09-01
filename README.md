@@ -5,7 +5,7 @@ MuVi: Official repository of "Single Image Test-Time Adaptation via Multi-View C
 
 ## Citation
 
-Please consider citing our work if you find it useful
+If you use MuVi in your work, we’d love it if you gave us a shout-out by citing our paper!
 
 ```
 @misc{joshi2025singleimagetesttimeadaptation,

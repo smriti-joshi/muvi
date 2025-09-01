@@ -3,9 +3,21 @@ MuVi: Official repository of "Single Image Test-Time Adaptation via Multi-View C
 
 ![architecture](https://github.com/smriti-joshi/muvi/blob/main/images/architecture.png)
 
-## 🚧 Code Coming Soon
-Stay tuned! Code and features will be added shortly.
+## Citation
 
+Please consider citing our work if you find it useful
+
+```
+@misc{joshi2025singleimagetesttimeadaptation,
+      title={Single Image Test-Time Adaptation via Multi-View Co-Training}, 
+      author={Smriti Joshi and Richard Osuala and Lidia Garrucho and Kaisar Kushibar and Dimitri Kessler and Oliver Diaz and Karim Lekadir},
+      year={2025},
+      eprint={2506.23705},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2506.23705}, 
+}
+```
 ## Acknowledgements
 
 This work builds upon nnUNet repository and adapts several test time adaptation methods to this framework:
@@ -17,6 +29,7 @@ This work builds upon nnUNet repository and adapts several test time adaptation 
 - [BNAdapt (official)](https://github.com/bethgelab/robustness)
   
 We acknowledge the authors of these works for releasing their code.
+
 
 
 

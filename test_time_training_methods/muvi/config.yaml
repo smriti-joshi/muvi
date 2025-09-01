@@ -1,0 +1,38 @@
+# MuVi Test-Time Training Configuration
+
+# === Training ===
+training:
+  epochs: 1                   # number of test-time training epochs
+  learning_rate: 0.001        # initial LR
+  optimizer:                  # SGD params
+    weight_decay: 0.00003
+    momentum: 0.99
+    nesterov: true
+  grad_clip: 12               # gradient clipping norm
+  amp: true                   # use mixed precision
+
+# === Loss Functions ===
+losses:
+  segmentation:
+    axial:
+      type: "DiceCE"
+      weight: 1.0
+    sagittal:
+      type: "DiceCE"
+      weight: 1.0
+    coronal:
+      type: "DiceCE"
+      weight: 1.0
+  consistency:
+    weight: 1.0
+  feature_alignment:
+    type: "CosineEmbeddingLoss"
+    weight: 1.0
+
+# === Pseudolabel Thresholds ===
+pseudolabel:
+  threshold_axial: 0.4
+  threshold_sagittal: 0.2
+  threshold_coronal: 0.2
+
+

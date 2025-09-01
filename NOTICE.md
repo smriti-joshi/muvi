@@ -17,6 +17,6 @@ This project includes code adapted from the following open-source repositories:
 - **BNAdapt** (Apache License 2.0)
 
 The original license texts for these projects are provided in the
-[`third_party/`](./third_party) directory of this repository.
+[`test_time_training_methods/`](./test_time_training_methods) directory of this repository in their respective folders.
 
 Please refer to the included license files for the full terms and conditions.

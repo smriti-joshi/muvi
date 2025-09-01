@@ -8,9 +8,17 @@ Stay tuned! Code and features will be added shortly.
 
 ## Acknowledgements
 
-nnUNet code is heavily used [official code](https://github.com/MIC-DKFZ/nnUNet)
-Code from the following repositories have been adapted for SOTA comparison:
-Tent [official code](https://github.com/DequanWang/tent)
-InTent [official code](https://github.com/mazurowski-lab/single-image-test-time-adaptation)
-MEMO [official code](https://github.com/zhangmarvin/memo)
+## Code References
+
+This work builds upon nnUNet repository and adapts several test time adaptation methods to this framework:
+
+- [nnUNet (official)](https://github.com/MIC-DKFZ/nnUNet) 
+- [Tent (official)](https://github.com/DequanWang/tent) 
+- [InTent (official)](https://github.com/mazurowski-lab/single-image-test-time-adaptation)  
+- [MEMO (official)](https://github.com/zhangmarvin/memo)
+- [BNAdapt (official)](https://github.com/bethgelab/robustness)
+- 
+We acknowledge the authors of these works for releasing their code.
+
+
 

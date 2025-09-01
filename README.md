@@ -17,7 +17,7 @@ This work builds upon nnUNet repository and adapts several test time adaptation 
 - [InTent (official)](https://github.com/mazurowski-lab/single-image-test-time-adaptation)  
 - [MEMO (official)](https://github.com/zhangmarvin/memo)
 - [BNAdapt (official)](https://github.com/bethgelab/robustness)
-- 
+  
 We acknowledge the authors of these works for releasing their code.
 
 

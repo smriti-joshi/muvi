@@ -8,8 +8,6 @@ Stay tuned! Code and features will be added shortly.
 
 ## Acknowledgements
 
-## Code References
-
 This work builds upon nnUNet repository and adapts several test time adaptation methods to this framework:
 
 - [nnUNet (official)](https://github.com/MIC-DKFZ/nnUNet) 
@@ -19,6 +17,7 @@ This work builds upon nnUNet repository and adapts several test time adaptation 
 - [BNAdapt (official)](https://github.com/bethgelab/robustness)
   
 We acknowledge the authors of these works for releasing their code.
+
 
 
 

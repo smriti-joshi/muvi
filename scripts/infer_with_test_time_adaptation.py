@@ -6,6 +6,7 @@ import os
 from typing import Union
 import numpy as np
 import glob
+import argparse
 
 import nnunetv2
 from nnunetv2.inference.predict_from_raw_data import nnUNetPredictor, recursive_find_python_class
@@ -182,6 +183,8 @@ class nnUnetTestTimeTrainer(nnUNetPredictor):
             self.test_time_training_memo()
         else:
             print('original nnUNet, no test time adaptation')
+
+
     def test_time_training_muvi(self, input_image):
 
         self.parent_pred_fn = lambda x: super(nnUnetTestTimeTrainer, self).predict_sliding_window_return_logits(x)
@@ -246,29 +249,87 @@ class nnUnetTestTimeTrainer(nnUNetPredictor):
 
         self.test_time_network = memo.Memo(model=self.test_time_network, prior=16)
 
-if __name__ == '__main__':
-    # predict a bunch of files
-    from nnunetv2.paths import nnUNet_results, nnUNet_raw
+# if __name__ == '__main__':
+#     # predict a bunch of files
+#     from nnunetv2.paths import nnUNet_results, nnUNet_raw
+#     predictor = nnUnetTestTimeTrainer(
+#         tile_step_size=0.5,
+#         use_gaussian=True,
+#         use_mirroring=True,
+#         perform_everything_on_gpu=True,
+#         device=torch.device('cuda', 0),
+#         verbose=False,
+#         verbose_preprocessing=False,
+#         allow_tqdm=True,
+#         method='muvi'
+#         )
+
+#     predictor.initialize_from_trained_model_folder(
+#     os.path.join(nnUNet_results, 'Dataset101_DukePhaseOneHalfMultifocal/nnUNetTrainer__nnUNetPlans__3d_fullres'),
+#     use_folds=[0],
+#     checkpoint_name='checkpoint_best.pth')
+     
+#     predictor.predict_from_files(os.path.join(nnUNet_raw, '/data/automatic-segmentation-nnunet-raw/nnUNet_raw/Dataset102_DukeTCGAHalf/imagesTs_tcga'),
+#                                 os.path.join(nnUNet_raw, '/workspace/AutomaticSegmentation/reproducibility/tcga_muvi_instancenorm'),
+#                                 save_probabilities=False, overwrite=False,
+#                                 num_processes_preprocessing=1, num_processes_segmentation_export=1, folder_with_segs_from_prev_stage = None, num_parts=1, part_id=0)
+
+
+
+def main():
+
+    from nnunetv2.paths import nnUNet_results
+
+    parser = argparse.ArgumentParser(description="MuVi Test-Time Adaptation Inference")
+
+    parser.add_argument("--input", type=str, required=True,
+                        help="Path to input images (imagesTs folder).")
+    parser.add_argument("--output", type=str, required=True,
+                        help="Path to save the predictions.")
+    parser.add_argument("--model", type=str, required=True,
+                        help="Path to trained nnU-Net model folder.")
+    parser.add_argument("--method", type=str, default="muvi", choices=["muvi", "tent", "intent", "memo", "bnadapt" "ptn"],
+                        help="Test-time adaptation method to use.")
+    parser.add_argument("--device", type=str, default="cuda:0",
+                        help="Device to run inference on (e.g., 'cuda:0' or 'cpu').")
+    parser.add_argument("--checkpoint", type=str, default="checkpoint_best.pth",
+                        help="Checkpoint filename inside the model folder.")
+
+    args = parser.parse_args()
+
+    device = torch.device(args.device)
+
     predictor = nnUnetTestTimeTrainer(
         tile_step_size=0.5,
         use_gaussian=True,
         use_mirroring=True,
         perform_everything_on_gpu=True,
-        device=torch.device('cuda', 0),
+        device=device,
         verbose=False,
         verbose_preprocessing=False,
         allow_tqdm=True,
-        method='muvi'
-        )
+        method=args.method
+    )
 
     predictor.initialize_from_trained_model_folder(
-    os.path.join(nnUNet_results, 'Dataset101_DukePhaseOneHalfMultifocal/nnUNetTrainer__nnUNetPlans__3d_fullres'),
-    use_folds=[0],
-    checkpoint_name='checkpoint_best.pth')
-     
-    predictor.predict_from_files(os.path.join(nnUNet_raw, '/data/automatic-segmentation-nnunet-raw/nnUNet_raw/Dataset105_ISPY1Half/imagesTs'),
-                                os.path.join(nnUNet_raw, '/workspace/AutomaticSegmentation/reproducibility/ispy_muvi_instancenorm'),
-                                save_probabilities=False, overwrite=False,
-                                num_processes_preprocessing=1, num_processes_segmentation_export=1, folder_with_segs_from_prev_stage = None, num_parts=1, part_id=0)
+        
+        os.path.join(nnUNet_results, args.model, 'nnUNetTrainer__nnUNetPlans__3d_fullres'),
+        use_folds=[0],  # one-fold only
+        checkpoint_name=args.checkpoint
+    )
+
+    predictor.predict_from_files(
+        args.input,
+        args.output,
+        save_probabilities=False,
+        overwrite=False,
+        num_processes_preprocessing=1,
+        num_processes_segmentation_export=1,
+        folder_with_segs_from_prev_stage=None,
+        num_parts=1,
+        part_id=0
+    )
 
 
+if __name__ == "__main__":
+    main()

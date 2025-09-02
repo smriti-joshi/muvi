@@ -6,6 +6,7 @@ from scipy.spatial import cKDTree
 import SimpleITK as sitk
 import numpy as np
 from medpy import metric
+import argparse
 
 def hausdorff_distance_mask(image0, image1, method = 'standard'):
     # https://github.com/scikit-image/scikit-image/issues/6890
@@ -141,11 +142,20 @@ def compute_average_dice_and_iou(path_to_pred, path_to_gt, patient_ids, csv_path
     
 def main():   
 
-    prediction_path = '/workspace/AutomaticSegmentation/reproducibility/ispy_muvi_instancenorm'
-    # gt_path = '/data/automatic-segmentation-nnunet-raw/nnUNet_raw/Dataset102_DukeTCGAHalf/labelsTr'
-    gt_path = '/workspace/AutomaticSegmentation/nnUNet/nnunetv2/data_external_validation/ISPY1/labelsTs_half'
+    parser = argparse.ArgumentParser(description="MuVi Test-Time Adaptation Inference")
+
+    parser.add_argument("--pred_path", type=str, required=True,
+                        help="Path to input images.")
+    parser.add_argument("--gt_path", type=str, required=True,
+                        help="Path to save the predictions.")
     
-    compute_average_dice_and_iou(prediction_path, gt_path, sorted(os.listdir(prediction_path)), csv_path=prediction_path)
+    # prediction_path = '/workspace/AutomaticSegmentation/reproducibility/tcga_muvi_instancenorm'
+    # gt_path = '/data/automatic-segmentation-nnunet-raw/nnUNet_raw/Dataset102_DukeTCGAHalf/labelsTr'
+    # gt_path = '/workspace/AutomaticSegmentation/nnUNet/nnunetv2/data_external_validation/ISPY1/labelsTs_half'
+    
+    args = parser.parse_args()
+
+    compute_average_dice_and_iou(args.pred_path, args.gt_path, sorted(os.listdir(args.pred_path)), csv_path=args.pred_path)
 
 
 if __name__ == "__main__":

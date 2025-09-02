@@ -5,6 +5,13 @@ MuVi: Official repository of "Single Image Test-Time Adaptation via Multi-View C
 
 ![result](https://github.com/smriti-joshi/muvi/blob/main/images/Result.png)
 
+### Important Links
+
+- [**Method Paper on arxiv:**](https://arxiv.org/abs/2506.23705)
+- [**Duke-Breast-Cancer-MRI:**](https://www.cancerimagingarchive.net/collection/duke-breast-cancer-mri/)  
+- [**ISPY1 Dataset:**](https://www.cancerimagingarchive.net/collection/ispy1/) 
+- [**TCGA-BRCA:**](https://www.cancerimagingarchive.net/collection/tcga-brca/)
+
 ## Pipeline Overview
 
 This pipeline is built on top of the nnU-Net inference pipeline, extending the [nnUNetPredictor](https://github.com/MIC-DKFZ/nnUNet/blob/master/nnunetv2/inference/predict_from_raw_data.py) class.

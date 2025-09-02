@@ -126,7 +126,7 @@ If you use MuVi in your work, we’d love it if you gave us a shout-out by citin
 ```
 ## Acknowledgements
 
-This repository was developed at the [BCN-AIM](https://www.bcn-aim.org/)), [Universitat de Barcelona].  
+This repository was developed at the [BCN-AIM](https://www.bcn-aim.org/), [Universitat de Barcelona].  
 
 We gratefully acknowledge support from [RadioVal](https://radioval.eu/) (European research and innovation programme grant agreement No 101057699).
 

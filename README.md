@@ -37,15 +37,15 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
     │   ├── bnadapt/                # BNAdapt method
     │   │   ├── LICENSE
     │   │   ├── NOTICE
-    │   │   ├── bn.py            
+    │   │   ├── bn.py               # BNAdapt core implementation
     │   │  
     │   ├── intent/                 # InTent method 
     │   │   ├── LICENSE
-    │   │   ├── intent.py           
+    │   │   ├── intent.py           # InTent core implementation
     │   │  
     │   ├── memo/                   # MEMO method 
     │   │   ├── LICENSE
-    │   │   ├── memo.py             # MEMO implementation
+    │   │   ├── memo.py             # MEMO core implementation
     │   │   └── test_time_augmentation.py  # Augmentation logic for MEMO
     │   │
     │   ├── muvi/                   # 🌟 Our proposed MuVi method
@@ -56,15 +56,15 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
     │   └── tent/                   # Tent method (modified the original repo to add PTN and 2D BatchNorm --> 3D BatchNorm)
     │       ├── LICENSE
     │       ├── README.md           # Original Tent docs
-    │       ├── cfgs/               # Tent configs
+    │       ├── cfgs/               
     │       │   ├── norm.yaml
     │       │   ├── source.yaml
     │       │   └── tent.yaml
-    │       ├── cifar10c.py         # Dataset helper for corruption benchmarks
-    │       ├── conf.py             # Config management
-    │       ├── norm.py             # !!! PTN implemented inside the Tent repository
+    │       ├── cifar10c.py         
+    │       ├── conf.py             
+    │       ├── norm.py             # PTN core implementation
     │       ├── tent.py             # Tent core implementation
-    │       └── requirements.txt    # Tent-specific requirements
+    │       └── requirements.txt   
 ```
 
 ## How to run?

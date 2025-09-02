@@ -134,7 +134,7 @@ This work builds upon nnUNet repository and adapts several test time adaptation 
   
 We acknowledge the authors of these works for releasing their code.
 
-This repository was developed at the [BCN-AIM](https://www.bcn-aim.org/), [Universitat de Barcelona].  
+This repository was developed at the [BCN-AIM](https://www.bcn-aim.org/), Universitat de Barcelona, Spain.  
 
 We gratefully acknowledge support from [RadioVal](https://radioval.eu/) (European research and innovation programme grant agreement No 101057699).
 

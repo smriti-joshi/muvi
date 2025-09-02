@@ -32,7 +32,7 @@ class MuViTrainer:
         self.pred_fn = pred_fn
 
 
-        with open("/workspace/muvi/test_time_training_methods/muvi/config.yaml", "r") as f:
+        with open("/workspace/muvi/scripts/test_time_training_methods/muvi/config.yaml", "r") as f:
             self.cfg = yaml.safe_load(f)
 
         self.epochs = self.cfg["training"]["epochs"]

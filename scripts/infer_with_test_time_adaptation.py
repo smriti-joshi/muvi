@@ -31,7 +31,6 @@ class nnUnetTestTimeTrainer(nnUNetPredictor):
                  verbose: bool = False,
                  verbose_preprocessing: bool = False,
                  allow_tqdm: bool = True,
-                 allow_test_time_da: bool = True,
                  method = 'muvi') -> None:
         
        
@@ -114,6 +113,7 @@ class nnUnetTestTimeTrainer(nnUNetPredictor):
     def _internal_maybe_mirror_and_predict(self, x: torch.Tensor) -> torch.Tensor:
         mirror_axes = self.allowed_mirroring_axes if self.use_mirroring else None
 
+        self.test_time_network.eval()
         prediction = self.test_time_network(x)
        
         if mirror_axes is not None:
@@ -181,8 +181,7 @@ class nnUnetTestTimeTrainer(nnUNetPredictor):
         elif self.method == 'memo':
             self.test_time_training_memo()
         else:
-            print('this method does not exist or is not implemented')
-
+            print('original nnUNet, no test time adaptation')
     def test_time_training_muvi(self, input_image):
 
         self.parent_pred_fn = lambda x: super(nnUnetTestTimeTrainer, self).predict_sliding_window_return_logits(x)
@@ -253,23 +252,22 @@ if __name__ == '__main__':
     predictor = nnUnetTestTimeTrainer(
         tile_step_size=0.5,
         use_gaussian=True,
-        use_mirroring=False,
+        use_mirroring=True,
         perform_everything_on_gpu=True,
         device=torch.device('cuda', 0),
         verbose=False,
         verbose_preprocessing=False,
         allow_tqdm=True,
-        allow_test_time_da=True,
-        method='muvi'
+        method='intent'
         )
-    
+
     predictor.initialize_from_trained_model_folder(
     os.path.join(nnUNet_results, 'Dataset101_DukePhaseOneHalfMultifocal/nnUNetTrainer__nnUNetPlans__3d_fullres'),
     use_folds=[0],
     checkpoint_name='checkpoint_best.pth')
      
     predictor.predict_from_files(os.path.join(nnUNet_raw, '/data/automatic-segmentation-nnunet-raw/nnUNet_raw/Dataset105_ISPY1Half/imagesTs'),
-                                os.path.join(nnUNet_raw, '/workspace/AutomaticSegmentation/reproducibility/ISPY_muvi_instancenorm_REFACTORED'),
+                                os.path.join(nnUNet_raw, '/workspace/AutomaticSegmentation/reproducibility/ispy_intent'),
                                 save_probabilities=False, overwrite=False,
                                 num_processes_preprocessing=1, num_processes_segmentation_export=1, folder_with_segs_from_prev_stage = None, num_parts=1, part_id=0)
 

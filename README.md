@@ -16,8 +16,6 @@ MuVi: Official repository of "Single Image Test-Time Adaptation via Multi-View C
 
 This pipeline is built on top of the nnU-Net inference pipeline, extending the [nnUNetPredictor](https://github.com/MIC-DKFZ/nnUNet/blob/master/nnunetv2/inference/predict_from_raw_data.py) class.
 
-⚠️ Note: It currently supports single-fold inference only (not five-fold ensembling).
-
 ```
 📂 Repository Structure
 

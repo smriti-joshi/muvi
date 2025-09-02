@@ -36,8 +36,7 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the n
     │   ├── intent/                 # InTent method (single-image TTA)
     │   │   ├── LICENSE
     │   │   ├── intent.py           # InTent core logic
-    │   │   └── their-github-repo   # Reference to original repo
-    │   │
+    │   │  
     │   ├── memo/                   # MEMO method (TTA with augmentations)
     │   │   ├── LICENSE
     │   │   ├── memo.py             # MEMO implementation

@@ -137,7 +137,10 @@ This repository was developed at the [BCN-AIM](https://www.bcn-aim.org/), [Unive
 
 We gratefully acknowledge support from [RadioVal](https://radioval.eu/) (European research and innovation programme grant agreement No 101057699).
 
-![bcn-aim](https://github.com/smriti-joshi/muvi/blob/main/images/bcn-aim-logo.png) ![radioval](https://github.com/smriti-joshi/muvi/blob/main/images/radioval.png)
+<p align="center">
+  <img src="https://github.com/smriti-joshi/muvi/blob/main/images/bcn-aim-logo.png" alt="bcn-aim" width="150"/>
+  <img src="https://github.com/smriti-joshi/muvi/blob/main/images/radioval-logo.png" alt="radioval" width="150"/>
+</p>
 
 
 

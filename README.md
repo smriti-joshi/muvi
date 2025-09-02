@@ -78,7 +78,7 @@ Follow the official nnU-Net installation instructions:
 > Currently, only **one-fold inference** is supported (not five-fold).
 
 ### 2. Modify nnU-Net normalization
-To switch between **InstanceNorm** and **BatchNorm**, edit ```norm_op``` in plans.json file.
+To switch between **InstanceNorm** and **BatchNorm**, edit ```norm_op``` in ```plans.json``` file in the respective [nnUNet_results](https://github.com/smriti-joshi/muvi/tree/main/scripts/nnUNet_results/Duke101Baseline) folder. 
 
 ### 3. Clone the repository
 ```

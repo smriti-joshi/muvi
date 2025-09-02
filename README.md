@@ -23,7 +23,7 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
 └── scripts/                        # All experiment & training scripts
     │
     ├── compute_metrics.py          # Evaluation metrics (e.g. Dice, Hausdorff, ASSD)
-    ├── infer_with_test_time_adaptation.py  # Entry point for test-time adaptation inference
+    ├── infer_with_test_time_adaptation.py  # 🌟 Main entry point for running inference w/ MuVi and other methods
     ├── run.sh                      # Example bash script to run experiments
     ├── utils.py                    # Shared utility functions
     │
@@ -32,8 +32,7 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
     │   │   ├── LICENSE
     │   │   ├── NOTICE
     │   │   ├── bn.py               # Core BN adaptation logic
-    │   │   └── __pycache__/
-    │   │
+    │   │  
     │   ├── intent/                 # InTent method (single-image TTA)
     │   │   ├── LICENSE
     │   │   ├── intent.py           # InTent core logic
@@ -43,9 +42,10 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
     │   │   ├── memo.py             # MEMO implementation
     │   │   └── test_time_augmentation.py  # Augmentation logic for MEMO
     │   │
-    │   ├── muvi/                   # Our proposed MuVi method
-    │   │   ├── config.yaml         # MuVi hyperparameters & config
-    │   │   └── muvi_trainer.py     # MuVi training/adaptation pipeline
+    │   ├── muvi/                   # 🌟 Our proposed MuVi method
+    │   │   ├── config.yaml         # 🌟 MuVi hyperparameters & configs
+    │   │   └── muvi_trainer.py     # 🌟 MuVi training & test-time adaptation logic
+
     │   │
     │   └── tent/                   # Tent method (entropy minimization)
     │       ├── LICENSE
@@ -60,6 +60,38 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
     │       ├── tent.py             # Tent core implementation
     │       └── requirements.txt    # Tent-specific requirements
 ```
+
+## How to run?
+
+### 1. Install nnU-Net
+Follow the official nnU-Net installation instructions:  
+👉 [nnU-Net GitHub](https://github.com/MIC-DKFZ/nnUNet)
+
+> ⚠️ Our pipeline is built on **nnU-Net’s inference pipeline** (`nnUNetPredictor` class).  
+> Currently, only **one-fold inference** is supported (not five-fold).
+
+---
+
+### 2. Modify nnU-Net normalization
+To switch between **InstanceNorm** and **BatchNorm**, edit "norm_op" in plans.json file.
+
+### 3. Clone the repository
+```
+git clone https://github.com/your-username/muvi-tta.git
+cd muvi-tta/scripts
+```
+
+### 4. Run inference with MuVi
+
+Example command:
+```
+python infer_with_test_time_adaptation.py \
+    --input /path/to/images \
+    --output /path/to/save/results \
+    --model /path/to/nnunet_trained_model \
+    --method muvi
+```
+
 ## Citation
 
 If you use MuVi in your work, we’d love it if you gave us a shout-out by citing our paper!

@@ -2,10 +2,9 @@
 MuVi: Official repository of "Single Image Test-Time Adaptation via Multi-View Co-Training" In MICCAI 2025.
 
 <p align="center">
-  <img src="https://github.com/smriti-joshi/muvi/blob/main/images/architecture.png" alt="architecture" width="1000"/>
+  <img src="https://github.com/smriti-joshi/muvi/blob/main/images/architecture.png" alt="architecture" width="750"/>
+  <img src="https://github.com/smriti-joshi/muvi/blob/main/images/Result.png" alt="result" width="750"/>
 </p>
-
-![result](https://github.com/smriti-joshi/muvi/blob/main/images/Result.png)
 
 ## Important Links
 

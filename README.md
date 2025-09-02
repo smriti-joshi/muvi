@@ -88,7 +88,6 @@ cd muvi-tta/scripts
 
 ### 4. Run inference with MuVi
 
-Example command:
 ```
 python infer_with_test_time_adaptation.py \
     --input /path/to/images \

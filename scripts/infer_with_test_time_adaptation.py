@@ -258,7 +258,7 @@ if __name__ == '__main__':
         verbose=False,
         verbose_preprocessing=False,
         allow_tqdm=True,
-        method='intent'
+        method='muvi'
         )
 
     predictor.initialize_from_trained_model_folder(
@@ -267,7 +267,7 @@ if __name__ == '__main__':
     checkpoint_name='checkpoint_best.pth')
      
     predictor.predict_from_files(os.path.join(nnUNet_raw, '/data/automatic-segmentation-nnunet-raw/nnUNet_raw/Dataset105_ISPY1Half/imagesTs'),
-                                os.path.join(nnUNet_raw, '/workspace/AutomaticSegmentation/reproducibility/ispy_intent'),
+                                os.path.join(nnUNet_raw, '/workspace/AutomaticSegmentation/reproducibility/ispy_muvi_instancenorm'),
                                 save_probabilities=False, overwrite=False,
                                 num_processes_preprocessing=1, num_processes_segmentation_export=1, folder_with_segs_from_prev_stage = None, num_parts=1, part_id=0)
 

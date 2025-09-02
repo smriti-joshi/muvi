@@ -66,8 +66,8 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
     │       ├── tent.py             # Tent core implementation
     │       └── requirements.txt   
 ```
-## ## 📦 Checkpoints
-Download the segmentation model and classification models' checkpoints from [here](https://drive.google.com/drive/folders/19jejDGrG_rKQxRJ2Qt2ap40eACg7zwKM?usp=sharing).
+## 📦 Checkpoints
+Download the baseline and supervised checkpoints from [here](https://drive.google.com/drive/folders/19jejDGrG_rKQxRJ2Qt2ap40eACg7zwKM?usp=sharing).
 
 ## 🐣 How to run?
 

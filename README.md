@@ -123,10 +123,6 @@ If you use MuVi in your work, we’d love it if you gave us a shout-out by citin
 ```
 ## Acknowledgements
 
-This repository was developed at the [BCN-AIM](https://www.bcn-aim.org/), [Universitat de Barcelona].  
-
-We gratefully acknowledge support from [RadioVal](https://radioval.eu/) (European research and innovation programme grant agreement No 101057699).
-
 This work builds upon nnUNet repository and adapts several test time adaptation methods to this framework:
 
 - [nnUNet (official)](https://github.com/MIC-DKFZ/nnUNet) 
@@ -136,6 +132,12 @@ This work builds upon nnUNet repository and adapts several test time adaptation 
 - [BNAdapt (official)](https://github.com/bethgelab/robustness)
   
 We acknowledge the authors of these works for releasing their code.
+
+This repository was developed at the [BCN-AIM](https://www.bcn-aim.org/), [Universitat de Barcelona].  
+
+We gratefully acknowledge support from [RadioVal](https://radioval.eu/) (European research and innovation programme grant agreement No 101057699).
+
+![bcn-aim](https://github.com/smriti-joshi/muvi/blob/main/images/bcn-aim-logo.png) ![radioval](https://github.com/smriti-joshi/muvi/blob/main/images/radioval.png)
 
 
 

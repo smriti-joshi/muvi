@@ -90,6 +90,16 @@ python infer_with_test_time_adaptation.py \
     --method muvi
 ```
 
+### 5. Compute Evaluation Metrics
+
+```
+python compute_metrics.py \
+    --predictions /path/to/save/results \
+    --ground_truth /path/to/gt_labels
+```
+
+```run.sh``` compiles the commands above! 
+
 ## Citation
 
 If you use MuVi in your work, we’d love it if you gave us a shout-out by citing our paper!

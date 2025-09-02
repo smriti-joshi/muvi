@@ -5,7 +5,7 @@ MuVi: Official repository of "Single Image Test-Time Adaptation via Multi-View C
 
 ![result](https://github.com/smriti-joshi/muvi/blob/main/images/Result.png)
 
-### Important Links
+## Important Links
 
 - [**Method Paper on arxiv**](https://arxiv.org/abs/2506.23705)
 - [**Duke-Breast-Cancer-MRI**](https://www.cancerimagingarchive.net/collection/duke-breast-cancer-mri/)  

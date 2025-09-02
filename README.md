@@ -1,7 +1,9 @@
 # MuVi
 MuVi: Official repository of "Single Image Test-Time Adaptation via Multi-View Co-Training" In MICCAI 2025.
 
-![architecture](https://github.com/smriti-joshi/muvi/blob/main/images/architecture.png)
+<p align="center">
+  <img src="[https://github.com/smriti-joshi/muvi/blob/main/images/bcn-aim-logo.png](https://github.com/smriti-joshi/muvi/blob/main/images/architecture.png)" alt="architecture" width="1000"/>
+</p>
 
 ![result](https://github.com/smriti-joshi/muvi/blob/main/images/Result.png)
 
@@ -137,9 +139,10 @@ This repository was developed at the [BCN-AIM](https://www.bcn-aim.org/), [Unive
 
 We gratefully acknowledge support from [RadioVal](https://radioval.eu/) (European research and innovation programme grant agreement No 101057699).
 
-<p align="center">
-  <img src="https://github.com/smriti-joshi/muvi/blob/main/images/bcn-aim-logo.png" alt="bcn-aim" width="150"/>
-  <img src="https://github.com/smriti-joshi/muvi/blob/main/images/radioval-logo.png" alt="radioval" width="150"/>
+<p align="left">
+  <img src="https://github.com/smriti-joshi/muvi/blob/main/images/bcn-aim-logo.png" alt="bcn-aim" width="250"/>
+  <img src="https://github.com/smriti-joshi/muvi/blob/main/images/radioval-logo.png" alt="radioval" width="250"/>
+  <img src="https://github.com/smriti-joshi/muvi/blob/main/images/Logo_Universitat_de_Barcelona.png" alt="ub" width="250"/>
 </p>
 
 

@@ -3,7 +3,7 @@ MuVi: Official repository of "Single Image Test-Time Adaptation via Multi-View C
 
 ![architecture](https://github.com/smriti-joshi/muvi/blob/main/images/architecture.png)
 
-🔧## Pipeline Overview
+## Pipeline Overview
 
 This pipeline is built on top of the nnU-Net inference pipeline, extending the nnUNetPredictor class.
 

@@ -7,10 +7,10 @@ MuVi: Official repository of "Single Image Test-Time Adaptation via Multi-View C
 
 ### Important Links
 
-- [**Method Paper on arxiv:**](https://arxiv.org/abs/2506.23705)
-- [**Duke-Breast-Cancer-MRI:**](https://www.cancerimagingarchive.net/collection/duke-breast-cancer-mri/)  
-- [**ISPY1 Dataset:**](https://www.cancerimagingarchive.net/collection/ispy1/) 
-- [**TCGA-BRCA:**](https://www.cancerimagingarchive.net/collection/tcga-brca/)
+- [**Method Paper on arxiv**](https://arxiv.org/abs/2506.23705)
+- [**Duke-Breast-Cancer-MRI**](https://www.cancerimagingarchive.net/collection/duke-breast-cancer-mri/)  
+- [**ISPY1 Dataset**](https://www.cancerimagingarchive.net/collection/ispy1/) 
+- [**TCGA-BRCA Dataset**](https://www.cancerimagingarchive.net/collection/tcga-brca/)
 
 ## Pipeline Overview
 

@@ -25,9 +25,7 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
 ├── README.md                       # You’re reading it :)
 │
 ├── images/                         # Figures for README/docs
-│   ├── Result.png                  # Example segmentation results
-│   └── architecture.png            # Architecture diagram
-│
+|
 └── scripts/                        # All experiment & training scripts
     │
     ├── compute_metrics.py          # Evaluation metrics (e.g. Dice, Hausdorff, ASSD)
@@ -36,16 +34,16 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
     ├── utils.py                    # Shared utility functions
     │
     ├── test_time_training_methods/ # Implementations of different TTA methods
-    │   ├── bnadapt/                # BatchNorm adaptation method
+    │   ├── bnadapt/                # BNAdapt method
     │   │   ├── LICENSE
     │   │   ├── NOTICE
-    │   │   ├── bn.py               # Core BN adaptation logic
+    │   │   ├── bn.py            
     │   │  
-    │   ├── intent/                 # InTent method (single-image TTA)
+    │   ├── intent/                 # InTent method 
     │   │   ├── LICENSE
-    │   │   ├── intent.py           # InTent core logic
+    │   │   ├── intent.py           
     │   │  
-    │   ├── memo/                   # MEMO method (TTA with augmentations)
+    │   ├── memo/                   # MEMO method 
     │   │   ├── LICENSE
     │   │   ├── memo.py             # MEMO implementation
     │   │   └── test_time_augmentation.py  # Augmentation logic for MEMO
@@ -55,7 +53,7 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
     │   │   └── muvi_trainer.py     # 🌟 MuVi training & test-time adaptation logic
 
     │   │
-    │   └── tent/                   # Tent method (entropy minimization)
+    │   └── tent/                   # Tent method (modified the original repo to add PTN and 2D BatchNorm --> 3D BatchNorm)
     │       ├── LICENSE
     │       ├── README.md           # Original Tent docs
     │       ├── cfgs/               # Tent configs
@@ -64,7 +62,7 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
     │       │   └── tent.yaml
     │       ├── cifar10c.py         # Dataset helper for corruption benchmarks
     │       ├── conf.py             # Config management
-    │       ├── norm.py             # Norm layers for Tent
+    │       ├── norm.py             # !!! PTN implemented inside the Tent repository
     │       ├── tent.py             # Tent core implementation
     │       └── requirements.txt    # Tent-specific requirements
 ```

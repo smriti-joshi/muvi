@@ -8,6 +8,7 @@ MuVi: Official repository of "Single Image Test-Time Adaptation via Multi-View C
 This pipeline is built on top of the nnU-Net inference pipeline, extending the nnUNetPredictor class.
 ⚠️ Note: It currently supports single-fold inference only (not five-fold ensembling).
 
+```
 📂 Repository Structure
 
 ├── LICENSE                         # Main license for this repo
@@ -58,7 +59,7 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the n
     │       ├── norm.py             # Norm layers for Tent
     │       ├── tent.py             # Tent core implementation
     │       └── requirements.txt    # Tent-specific requirements
-
+```
 ## Citation
 
 If you use MuVi in your work, we’d love it if you gave us a shout-out by citing our paper!

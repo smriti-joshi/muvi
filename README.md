@@ -66,8 +66,7 @@ This pipeline is built on top of the nnU-Net inference pipeline, extending the [
     │       ├── tent.py             # Tent core implementation
     │       └── requirements.txt   
 ```
-## 📦 Checkpoints
-Download the baseline and supervised checkpoints from [here](https://drive.google.com/drive/folders/19jejDGrG_rKQxRJ2Qt2ap40eACg7zwKM?usp=sharing).
+
 
 ## 🐣 How to run?
 
@@ -78,14 +77,16 @@ Follow the official nnU-Net installation instructions:
 > ⚠️ Our pipeline is built on **nnU-Net’s inference pipeline** (`nnUNetPredictor` class).  
 > Currently, only **one-fold inference** is supported (not five-fold).
 
-### 2. Modify nnU-Net normalization
-To switch between **InstanceNorm** and **BatchNorm**, edit ```norm_op``` in ```plans.json``` file in the respective [nnUNet_results](https://github.com/smriti-joshi/muvi/tree/main/scripts/nnUNet_results/Duke101Baseline) folder. 
-
-### 3. Clone the repository
+### 2. Clone the repository
 ```
 git clone https://github.com/your-username/muvi-tta.git
 cd muvi-tta/scripts
 ```
+### 3. Make necessary modifications
+
+📊 **Normalization**: To switch between **InstanceNorm** and **BatchNorm**, edit ```norm_op``` in ```plans.json``` file in the respective [nnUNet_results](https://github.com/smriti-joshi/muvi/tree/main/scripts/nnUNet_results/Duke101Baseline) folder. 
+
+📦 **Checkpoints**: Download the baseline and supervised checkpoints from [here](https://drive.google.com/drive/folders/19jejDGrG_rKQxRJ2Qt2ap40eACg7zwKM?usp=sharing) and add it to the respective [nnUNet_results](https://github.com/smriti-joshi/muvi/tree/main/scripts/nnUNet_results/Duke101Baseline) folder. 
 
 ### 4. Run inference with MuVi
 

@@ -110,6 +110,8 @@ python compute_metrics.py \
 
 ## 📋 To-Do List
 
+This repository is currently being developed. The remaining tasks include: 
+
 [ ] Add preprocessing pipeline
 
 [ ] Add checkpoints to google drive

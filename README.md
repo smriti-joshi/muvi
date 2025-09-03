@@ -108,6 +108,20 @@ python compute_metrics.py \
 
 ```run.sh``` compiles the commands above! 
 
+## 📋 To-Do List
+
+[ ] Add preprocessing pipeline
+
+[ ] Add checkpoints to google drive
+
+[ ] Add data partitioning information
+
+[ ] Add additional results
+
+[ ] Verify that MuVi works with the current version of nnUNet
+
+[ ] Create ```requirements.txt``` file
+
 ## Citation
 
 If you use MuVi in your work, we’d love it if you gave us a shout-out by citing our paper!
